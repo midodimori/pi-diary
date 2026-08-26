@@ -2,7 +2,10 @@
   "name": "pi-diary",
   "version": "0.1.0",
   "description": "Pi skills for proactively recording, searching, and forgetting Markdown Diary records.",
-  "repository": "github:midodimori/pi-diary",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midodimori/pi-diary.git"
+  },
   "keywords": [
     "pi-package"
   ],
