@@ -1,0 +1,17 @@
+{
+  "name": "pi-diary",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pi skills for proactively recording, searching, and forgetting Markdown Diary records.",
+  "keywords": [
+    "pi-package"
+  ],
+  "scripts": {
+    "eval": "node evals/run.mjs"
+  },
+  "pi": {
+    "skills": [
+      "skills"
+    ]
+  }
+}

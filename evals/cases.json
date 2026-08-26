@@ -1,0 +1,142 @@
+[
+  {
+    "id": "must-decision-present",
+    "category": "routing",
+    "prompt": "What database did we decide to use for Project Atlas? Consult prior history if needed.",
+    "diary": {"2026-01-03.md": "# 2026-01-03\n\n## Project Atlas database\n\nTags: `atlas`, `database`, `architecture`\n\n- We chose PostgreSQL for Project Atlas.\n"},
+    "expect": {"search": "yes", "mutation": "no"}
+  },
+  {
+    "id": "must-decision-absent",
+    "category": "routing",
+    "prompt": "What database did we decide to use for Project Atlas? Consult prior history if needed.",
+    "diary": {},
+    "expect": {"search": "yes", "mutation": "no"}
+  },
+  {
+    "id": "must-personal-fact-present",
+    "category": "routing",
+    "prompt": "When is my passport renewal due?",
+    "diary": {"2026-02-04.md": "# 2026-02-04\n\n## Passport renewal\n\nTags: `passport`, `renewal`, `travel`\n\n- Passport renewal is due in November 2027.\n"},
+    "expect": {"search": "yes", "mutation": "no"}
+  },
+  {
+    "id": "must-personal-fact-absent",
+    "category": "routing",
+    "prompt": "When is my passport renewal due?",
+    "diary": {},
+    "expect": {"search": "yes", "mutation": "no"}
+  },
+  {
+    "id": "probe-project-present",
+    "category": "routing",
+    "prompt": "Help me plan the next Project Atlas deployment step.",
+    "diary": {"2026-03-01.md": "# 2026-03-01\n\n## Project Atlas deployment\n\nTags: `atlas`, `deployment`, `operations`\n\n- Atlas deployments must remain private to the tailnet.\n"},
+    "expect": {"search": "either", "mutation": "no"}
+  },
+  {
+    "id": "probe-project-absent",
+    "category": "routing",
+    "prompt": "Help me plan the next Project Atlas deployment step.",
+    "diary": {},
+    "expect": {"search": "either", "mutation": "no"}
+  },
+  {
+    "id": "probe-misspelled-multiturn",
+    "category": "routing",
+    "prompts": [
+      "what should I pack for the avernoa trip?",
+      "for the winter visit",
+      "no, for the overnight train"
+    ],
+    "diary": {"2026-03-01.md": "# 2026-03-01\n\n## Averona winter travel plan\n\nTags: `averona`, `travel`, `winter`, `packing`\n\n- Take the overnight train to Averona.\n- Pack the insulated boots already stored in the hall closet.\n"},
+    "expect": {"search": "yes", "mutation": "no"}
+  },
+  {
+    "id": "self-contained-summary-present",
+    "category": "routing",
+    "prompt": "Summarize this sentence in five words: The train arrived after sunset.",
+    "diary": {"2026-03-02.md": "# 2026-03-02\n\n## Train preference\n\nTags: `train`, `travel`, `preference`\n\n- I prefer window seats on trains.\n"},
+    "expect": {"search": "no", "mutation": "no"}
+  },
+  {
+    "id": "self-contained-summary-absent",
+    "category": "routing",
+    "prompt": "Summarize this sentence in five words: The train arrived after sunset.",
+    "diary": {},
+    "expect": {"search": "no", "mutation": "no"}
+  },
+  {
+    "id": "self-contained-calculation-present",
+    "category": "routing",
+    "prompt": "What is 17 multiplied by 19?",
+    "diary": {"2026-03-03.md": "# 2026-03-03\n\n## Favorite number\n\nTags: `number`, `preference`, `personal`\n\n- My favorite number is 17.\n"},
+    "expect": {"search": "no", "mutation": "no"}
+  },
+  {
+    "id": "self-contained-calculation-absent",
+    "category": "routing",
+    "prompt": "What is 17 multiplied by 19?",
+    "diary": {},
+    "expect": {"search": "no", "mutation": "no"}
+  },
+  {
+    "id": "note-durable-decision",
+    "category": "recording",
+    "prompt": "We have decided to use PostgreSQL for the Northstar project. This is the final decision.",
+    "diary": {},
+    "expect": {"search": "yes", "mutation": "yes", "diaryIncludes": ["postgresql", "northstar"]}
+  },
+  {
+    "id": "note-speculation",
+    "category": "recording",
+    "prompt": "I am only brainstorming and have made no decision: perhaps Northstar could use PostgreSQL, or perhaps SQLite.",
+    "diary": {},
+    "expect": {"search": "no", "mutation": "no"}
+  },
+  {
+    "id": "forget-narrow-fact",
+    "category": "forgetting",
+    "prompt": "Forget my old phone number 555-0101 from the Diary.",
+    "diary": {"2026-04-01.md": "# 2026-04-01\n\n## Contact details\n\nTags: `contact`, `phone`, `preference`\n\n- My old phone number is 555-0101.\n- My preferred contact method is email.\n"},
+    "expect": {"search": "yes", "mutation": "yes", "diaryIncludes": ["preferred contact method is email"], "diaryExcludes": ["555-0101"]}
+  },
+  {
+    "id": "forget-duplicates",
+    "category": "forgetting",
+    "prompt": "Forget that Rowan is my emergency contact everywhere in the Diary.",
+    "diary": {
+      "2026-04-02.md": "# 2026-04-02\n\n## Emergency contact\n\nTags: `contact`, `emergency`, `personal`\n\n- Rowan is my emergency contact.\n",
+      "2026-04-03.md": "# 2026-04-03\n\n## Travel preparation\n\nTags: `travel`, `contact`, `planning`\n\n- For travel forms, Rowan is my emergency contact.\n- Keep a paper itinerary.\n"
+    },
+    "expect": {"search": "yes", "mutation": "yes", "diaryIncludes": ["keep a paper itinerary"], "diaryExcludes": ["rowan"]}
+  },
+  {
+    "id": "forget-ambiguous",
+    "category": "forgetting",
+    "prompt": "Forget Atlas from my Diary.",
+    "diary": {"2026-04-04.md": "# 2026-04-04\n\n## Atlas deployment project\n\nTags: `atlas`, `project`, `deployment`\n\n- Atlas deploys on Fridays.\n\n## Atlas travel book\n\nTags: `atlas`, `book`, `travel`\n\n- Atlas is on my reading list.\n"},
+    "expect": {"search": "yes", "mutation": "no", "responseIncludes": ["atlas deployment project", "atlas travel book"]}
+  },
+  {
+    "id": "forget-broad",
+    "category": "forgetting",
+    "prompt": "Forget everything about Project Atlas from my Diary.",
+    "diary": {"2026-04-05.md": "# 2026-04-05\n\n## Atlas database decision\n\nTags: `atlas`, `database`, `decision`\n\n- Atlas uses PostgreSQL.\n\n## Atlas deployment constraint\n\nTags: `atlas`, `deployment`, `constraint`\n\n- Atlas stays private.\n"},
+    "expect": {"search": "yes", "mutation": "no", "responseIncludes": ["atlas database decision", "atlas deployment constraint"]}
+  },
+  {
+    "id": "correction-preserves-history",
+    "category": "lifecycle",
+    "prompt": "I moved from Lisbon to Berlin. Update the Diary: my home city is now Berlin.",
+    "diary": {"2026-05-01.md": "# 2026-05-01\n\n## Home city\n\nTags: `home`, `city`, `personal`\n\n- My home city was Lisbon.\n"},
+    "expect": {"search": "yes", "mutation": "yes", "diaryIncludes": ["lisbon", "berlin", "supersedes"]}
+  },
+  {
+    "id": "retraction-removes-error",
+    "category": "lifecycle",
+    "prompt": "The Diary says my middle name is Orion. That was never true; I do not have a middle name. Correct the Diary.",
+    "diary": {"2026-05-02.md": "# 2026-05-02\n\n## Middle name\n\nTags: `name`, `personal`, `identity`\n\n- My middle name is Orion.\n"},
+    "expect": {"search": "yes", "mutation": "yes", "diaryIncludes": ["middle name"], "diaryExcludes": ["orion"]}
+  }
+]
