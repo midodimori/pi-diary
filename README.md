@@ -23,16 +23,17 @@ Recording is also proactive, but limited to information likely to matter later. 
 
 Requirements: [Pi](https://github.com/earendil-works/pi), `fd`, and `rg`.
 
-From a local checkout:
+From npm:
 
 ```sh
-pi install /absolute/path/to/pi-diary
+pi install npm:pi-diary
 ```
 
-From GitHub:
+From GitHub or a local checkout:
 
 ```sh
 pi install git:github.com/midodimori/pi-diary
+pi install /absolute/path/to/pi-diary
 ```
 
 Diary files default to `~/pi-diary`. Override the location in your shell configuration:
