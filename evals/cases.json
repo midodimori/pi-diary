@@ -81,6 +81,13 @@
     "expect": {"search": "no", "mutation": "no"}
   },
   {
+    "id": "note-reconstructable-outcome",
+    "category": "recording",
+    "prompt": "The Borealis settings screen is complete. Its implementation, documentation, and passing tests are committed in the project, and no follow-up remains.",
+    "diary": {},
+    "expect": {"search": "either", "mutation": "no"}
+  },
+  {
     "id": "note-durable-decision",
     "category": "recording",
     "prompt": "We have decided to use PostgreSQL for the Northstar project. This is the final decision.",

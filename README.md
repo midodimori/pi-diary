@@ -3,7 +3,7 @@
 A Pi package that gives agents durable, user-owned history in plain Markdown.
 It installs three skills:
 
-- `diary-note` proactively records durable facts, decisions, outcomes, follow-ups, and reminders.
+- `diary-note` proactively records durable user-specific facts, decisions, commitments, unresolved follow-ups, and reminders.
 - `diary-search` proactively retrieves relevant history with bounded local `fd` and `rg` searches.
 - `diary-forget` permanently removes explicitly forgotten information without a tombstone or backup.
 
@@ -17,7 +17,7 @@ The user does not need to know whether a relevant Diary Record exists. The searc
 
 Before searching, an agent cannot know what hidden history exists. The bounded probe is the deliberate compromise between missed context and searching every request.
 
-Recording is also proactive, but limited to information likely to matter later. Brainstorming, transient chatter, credentials, tokens, private keys, and unnecessary personal data are excluded.
+Recording is also proactive, but limited to information likely to matter later that future agents cannot reconstruct from code, tests, Git, or project documentation. Routine implementation status, brainstorming, transient chatter, credentials, tokens, private keys, and unnecessary personal data are excluded.
 
 ## Install
 
@@ -86,9 +86,9 @@ Forgetting does not delete linked Pi conversation transcripts. See the full [Dia
 The opt-in evaluation uses synthetic subjects and isolated temporary Diary directories. It never runs in normal workflows or CI. Node.js is needed only for these checks.
 
 ```sh
-npm run eval -- --list       # inspect the 19 cases without model calls
+npm run eval -- --list       # inspect the 20 cases without model calls
 npm run eval                 # run all cases using Pi's current model
 npm run eval -- case-id      # run selected cases
 ```
 
-The cases cover proactive routing, self-contained requests, recording, corrections, retractions, and forgetting, including a misspelled multi-turn subject. Set `PI_EVAL_PROVIDER` or `PI_EVAL_MODEL` to override Pi's defaults.
+The cases cover proactive routing, self-contained and reconstructable project outcomes, recording, corrections, retractions, and forgetting, including a misspelled multi-turn subject. Set `PI_EVAL_PROVIDER` or `PI_EVAL_MODEL` to override Pi's defaults.

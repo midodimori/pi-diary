@@ -21,8 +21,8 @@ A titled, tagged unit of durable information with conversation provenance.
 _Avoid_: Note, entry, memory
 
 **Durable information**:
-A fact, decision, outcome, follow-up, or reminder likely to matter in a later conversation.
-_Avoid_: Context, memory
+A user-specific fact, decision, commitment, unresolved follow-up, or reminder likely to matter later and unavailable from authoritative project artifacts.
+_Avoid_: Context, memory, reconstructable project state
 
 **Proactive retrieval**:
 An agent-initiated Diary search performed without an explicit search request because prior user history may change correctness, recommendations, commitments, or consistency.

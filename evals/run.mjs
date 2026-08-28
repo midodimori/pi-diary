@@ -12,7 +12,7 @@ const cases = JSON.parse(readFileSync(join(root, "evals/cases.json"), "utf8"));
 const args = process.argv.slice(2);
 
 function validateCases() {
-  if (cases.length !== 19) throw new Error(`Expected 19 cases, found ${cases.length}`);
+  if (cases.length !== 20) throw new Error(`Expected 20 cases, found ${cases.length}`);
   const ids = new Set();
   for (const test of cases) {
     if (!test.id || ids.has(test.id)) throw new Error(`Missing or duplicate case id: ${test.id}`);

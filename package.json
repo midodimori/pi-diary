@@ -1,6 +1,6 @@
 {
   "name": "pi-diary",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pi skills for proactively recording, searching, and forgetting Markdown Diary records.",
   "repository": {
     "type": "git",
